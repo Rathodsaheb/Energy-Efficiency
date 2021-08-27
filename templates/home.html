@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:font-family="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Energy efficiency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+     * {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px;
+
+}
+.column2 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 500px;
+  color:#996515;
+  font-family:"Papyrus",fantasy;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.head1 {
+  color:#B8860B;
+  font-size:40px;
+  font-family:"Papyrus",fantasy;
+}
+
+.row{
+    font-size:15px;
+}
+
+.result {
+    font-size:35px;
+    color:#7723AC;
+    font-family:"Papyrus","Copperplate",fantasy;
+}
+.predict {
+    font-size:30px;
+    color:#7723AC;
+    font-family:"Copperplate","Papyrus",,fantasy;
+}
+
+</style>
+</head>
+<body style="background-color:#ffffff">
+
+<h2 class="head1"><span><b>Energy Efficiency Prediction of Residential Buildings</b></span></h2>
+
+<div class="row">
+  <div class="column1">
+    <img src="https://www.singhhomes.com/wp-content/uploads/2017/12/increase-home-energy-efficiency.jpg" alt="house" width="700" height="600">
+
+  </div>
+<div>
+  <div class="column2">
+      <h2><b>Building Details</b></h2>
+    <div class="row">
+        <div class="col-sm5 col-sm-offset-1">
+        <form action="/home" role="form" method='POST'>
+            <label for="x1"><b>Relative Compactness:</b></label>
+            <input type="text" id="x1" name="x1"><br><br>
+            <label for="x2"><b>Surface Area:</b></label>
+            <input type="text" id="x2" name="x2"><br><br>
+            <label for="x3"><b>Wall Area:</b></label>
+            <input type="text" id="x3" name="x3"><br><br>
+            <label for="x4"><b>Roof Area:</b></label>
+            <input type="text" id="x4" name="x4"><br><br>
+            <label for="x5"><b>Overall Height:</b></label>
+            <input type="text" id="x5" name="x5"><br><br>
+            <label for="x6"><b>Orientation:</b></label>
+            <input type="text" id="x6" name="x6"><br><br>
+            <label for="x7"><b>Glazing Area:</b></label>
+            <input type="text" id="x7" name="x7"><br><br>
+            <label for="x8"><b>Glazing Area Distribution:</b></label>
+            <input type="text" id="x8" name="x8"><br><br>
+            <input type="submit" style="font-weight:bold;">
+        </form>
+       </div>
+       <div class="col-sm5 col-sm-offset-1">
+           {% if prediction1 and prediction2 %}
+           <h2 class="result"><b>Results</b></h2>
+           <p class="predict"><b>{{prediction1}}</b></p>
+           <p class="predict"><b>{{prediction2}}</b></p>
+           {% endif %}
+       </div>
+    </div>
+</div>
+</div>
+</div>
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  </div>
+</div>
+
+</body>
+</html>
